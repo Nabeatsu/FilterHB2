@@ -8,14 +8,14 @@
 
 import Foundation
 
+/// RSSから取得した値を受けとる
 public struct RSSItem {
-    public var title: String
-    public var description: String
-    public var pubDate: String
-    public var url: String
-    public var bookmarkCount: String
-    public var imageUrl: String
-    //var url: String
+    internal var title: String
+    internal var description: String
+    internal var pubDate: String
+    internal var url: String
+    internal var bookmarkCount: String
+    internal var imageUrl: String
 }
 
 public enum UrlList: String {
@@ -103,7 +103,7 @@ public class RSSFetcher: NSObject, XMLParserDelegate {
 
         let request = URLRequest(url: URL(string: url.rawValue)!)
         let urlSession = URLSession.shared
-        let task = urlSession.dataTask(with: request) {(data, _, error) in
+        let task = urlSession.dataTask(with: request) {data, _, error in
             guard let data = data else {
                 if let error = error {
                     print(error.localizedDescription)
@@ -124,7 +124,7 @@ public class RSSFetcher: NSObject, XMLParserDelegate {
 
         let request = URLRequest(url: URL(string: urlString)!)
         let urlSession = URLSession.shared
-        let task = urlSession.dataTask(with: request) {(data, _, error) in
+        let task = urlSession.dataTask(with: request) {data, _, error in
             guard let data = data else {
                 if let error = error {
                     print(error.localizedDescription)
@@ -141,7 +141,13 @@ public class RSSFetcher: NSObject, XMLParserDelegate {
     }
 
     // MARK: XML Parser Delegate
-    public func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String: String] = [:]) {
+    public func parser(
+        _ parser: XMLParser,
+        didStartElement elementName: String,
+        namespaceURI: String?,
+        qualifiedName qName: String?,
+        attributes attributeDict: [String: String] = [:]
+    ) {
         currentElement = elementName
         if currentElement == "item" {
             currentTitle = ""
@@ -165,9 +171,21 @@ public class RSSFetcher: NSObject, XMLParserDelegate {
         }
     }
 
-    public func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
+    public func parser(
+        _ parser: XMLParser,
+        didEndElement elementName: String,
+        namespaceURI: String?,
+        qualifiedName qName: String?
+    ) {
         if elementName == "item" {
-            let rssItem = RSSItem(title: currentTitle, description: currentDescription, pubDate: currentPubDate, url: currentUrl, bookmarkCount: currentBookmarkCount, imageUrl: currentImageUrl)
+            let rssItem = RSSItem(
+                title: currentTitle,
+                description: currentDescription,
+                pubDate: currentPubDate,
+                url: currentUrl,
+                bookmarkCount: currentBookmarkCount,
+                imageUrl: currentImageUrl
+            )
             self.rssItems.append(rssItem)
         }
     }
@@ -179,5 +197,4 @@ public class RSSFetcher: NSObject, XMLParserDelegate {
     public func parser(_ parser: XMLParser, parseErrorOccurred parseError: Error) {
         print(parseError.localizedDescription)
     }
-
 }

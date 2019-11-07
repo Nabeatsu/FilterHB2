@@ -7,7 +7,8 @@
 //
 
 import Foundation
-enum RSSError: Error {
-  case parsing(description: String)
-  case network(description: String)
+
+public enum RSSError: Error {
+    case parsing(description: String)
+    case network(description: String)
 }

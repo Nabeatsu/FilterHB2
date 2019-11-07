@@ -6,9 +6,10 @@
 //  Copyright © 2019 田辺信之. All rights reserved.
 //
 
-import Foundation
 import Combine
+import Foundation
 
-protocol RSSFetchable {
-    func fetchQiita(tag: String) -> AnyPublisher<[RSSItem], RSSError>
+/// RSSをfetchするためにconformするprotocol
+public protocol RSSFetchable {
+    //    func fetchRSS() -> AnyPublisher<[RSSItem], RSSError>
 }
