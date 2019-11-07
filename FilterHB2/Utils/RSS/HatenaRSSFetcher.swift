@@ -11,7 +11,7 @@ import Foundation
 // download xml from a server,
 // parse xml to foundation objects
 // call baxhck
-public class RSSFetcher: NSObject, XMLParserDelegate {
+public class HatenaRSSFetcher: NSObject, XMLParserDelegate {
     //""
     private var rssItems: [RSSItem] = []
     private var currentElement = ""

@@ -14,7 +14,7 @@
 		55002D5B2374521000DC2A45 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55002D5A2374521000DC2A45 /* Preview Assets.xcassets */; };
 		55002D5E2374521000DC2A45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55002D5C2374521000DC2A45 /* LaunchScreen.storyboard */; };
 		55002D692374521000DC2A45 /* FilterHB2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55002D682374521000DC2A45 /* FilterHB2Tests.swift */; };
-		55C874FD23745CC000028263 /* RSSFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C874FC23745CC000028263 /* RSSFetcher.swift */; };
+		55C874FD23745CC000028263 /* HatenaRSSFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C874FC23745CC000028263 /* HatenaRSSFetcher.swift */; };
 		55C874FF23745E0300028263 /* RSSFetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C874FE23745E0300028263 /* RSSFetchable.swift */; };
 		55C8750223745E6F00028263 /* RSSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C8750123745E6F00028263 /* RSSError.swift */; };
 		55C8750A2374638700028263 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 55C875092374638700028263 /* .swiftlint.yml */; };
@@ -44,7 +44,7 @@
 		55002D642374521000DC2A45 /* FilterHB2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilterHB2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55002D682374521000DC2A45 /* FilterHB2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHB2Tests.swift; sourceTree = "<group>"; };
 		55002D6A2374521000DC2A45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		55C874FC23745CC000028263 /* RSSFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFetcher.swift; sourceTree = "<group>"; };
+		55C874FC23745CC000028263 /* HatenaRSSFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatenaRSSFetcher.swift; sourceTree = "<group>"; };
 		55C874FE23745E0300028263 /* RSSFetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFetchable.swift; sourceTree = "<group>"; };
 		55C8750123745E6F00028263 /* RSSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSError.swift; sourceTree = "<group>"; };
 		55C875092374638700028263 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = .swiftlint.yml; path = FilterHB2/.swiftlint.yml; sourceTree = "<group>"; };
@@ -143,7 +143,7 @@
 		55C874FB23745C9A00028263 /* RSS */ = {
 			isa = PBXGroup;
 			children = (
-				55C874FC23745CC000028263 /* RSSFetcher.swift */,
+				55C874FC23745CC000028263 /* HatenaRSSFetcher.swift */,
 				55C8750F23746EFF00028263 /* HatenaRSSList.swift */,
 			);
 			path = RSS;
@@ -324,7 +324,7 @@
 				55C8750223745E6F00028263 /* RSSError.swift in Sources */,
 				55C8750E23746E7100028263 /* RSSItem.swift in Sources */,
 				55C8751023746EFF00028263 /* HatenaRSSList.swift in Sources */,
-				55C874FD23745CC000028263 /* RSSFetcher.swift in Sources */,
+				55C874FD23745CC000028263 /* HatenaRSSFetcher.swift in Sources */,
 				55002D522374520E00DC2A45 /* AppDelegate.swift in Sources */,
 				55002D542374520E00DC2A45 /* SceneDelegate.swift in Sources */,
 				55002D562374520E00DC2A45 /* ContentView.swift in Sources */,
