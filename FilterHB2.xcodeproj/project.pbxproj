@@ -92,6 +92,7 @@
 		55002D502374520E00DC2A45 /* FilterHB2 */ = {
 			isa = PBXGroup;
 			children = (
+				55CE06E523746FE70069C9BC /* Resources */,
 				55C8750523745E8C00028263 /* Views */,
 				55C8750423745E8600028263 /* ViewModels */,
 				55C8750323745E7F00028263 /* Utils */,
@@ -99,9 +100,7 @@
 				55C874F923745BB500028263 /* Protocols */,
 				55002D512374520E00DC2A45 /* AppDelegate.swift */,
 				55002D532374520E00DC2A45 /* SceneDelegate.swift */,
-				55002D552374520E00DC2A45 /* ContentView.swift */,
 				55002D572374521000DC2A45 /* Assets.xcassets */,
-				55002D5C2374521000DC2A45 /* LaunchScreen.storyboard */,
 				55002D5F2374521000DC2A45 /* Info.plist */,
 				55002D592374521000DC2A45 /* Preview Content */,
 			);
@@ -177,6 +176,7 @@
 		55C8750523745E8C00028263 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				55002D552374520E00DC2A45 /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -187,6 +187,14 @@
 				55C8750D23746E7100028263 /* RSSItem.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		55CE06E523746FE70069C9BC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				55002D5C2374521000DC2A45 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
