@@ -8,53 +8,6 @@
 
 import Foundation
 
-/// RSSから取得した値を受けとる
-public struct RSSItem {
-    internal var title: String
-    internal var description: String
-    internal var pubDate: String
-    internal var url: String
-    internal var bookmarkCount: String
-    internal var imageUrl: String
-}
-
-public enum UrlList: String {
-    case home = "http://b.hatena.ne.jp/hotentry.rss"
-    case technology = "http://b.hatena.ne.jp/hotentry/it.rss"
-    case study = "http://b.hatena.ne.jp/hotentry/knowledge.rss"
-    case social = "http://b.hatena.ne.jp/hotentry/social.rss"
-    case economics = "http://b.hatena.ne.jp/hotentry/economics.rss"
-    case life = "http://b.hatena.ne.jp/hotentry/life.rss"
-    case fun = "http://b.hatena.ne.jp/hotentry/fun.rss"
-    case entertainment = "http://b.hatena.ne.jp/hotentry/entertainment.rss"
-    case game = "http://b.hatena.ne.jp/hotentry/game.rss"
-    case user = "http://b.hatena.ne.jp/yuuta-iwata/bookmark.rss?of=40&14023238743"
-
-    public func getTitle() -> String {
-        switch self {
-        case .home:
-            return "総合"
-        case .technology:
-            return "テクノロジー"
-        case .study:
-            return "学び"
-        case .social:
-            return "社会"
-        case .economics:
-            return "政治経済"
-        case .life:
-            return "生活"
-        case .fun:
-            return "おもしろ"
-        case .entertainment:
-            return "エンタメ"
-        case .game:
-            return "アニメとゲーム"
-        case .user:
-            return "ユーザー情報"
-        }
-    }
-}
 // download xml from a server,
 // parse xml to foundation objects
 // call baxhck
@@ -98,7 +51,7 @@ public class RSSFetcher: NSObject, XMLParserDelegate {
 
     private var parserCompletionHandler: (([RSSItem]) -> Void)?
 
-    public func parseFeed(url: UrlList, completionHandler: (([RSSItem]) -> Void)?) {
+    public func parseFeed(url: HatenaRSSList, completionHandler: (([RSSItem]) -> Void)?) {
         self.parserCompletionHandler = completionHandler
 
         let request = URLRequest(url: URL(string: url.rawValue)!)
