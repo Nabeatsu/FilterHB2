@@ -8,7 +8,15 @@
 
 import Foundation
 
-public enum HatenaRSSList: String {
+/// RSSFetchableの引数で使用。このprotocolに準拠することは取得先のRSSに関する情報を保持することを表す。
+public protocol RSSInfo {
+    /// Title取得
+    var title: String { get }
+    /// RSSのURLを取り出すプロパティ
+    var url: URL? { get }
+}
+
+public enum HatenaRSSList: String, RSSInfo {
     case home = "http://b.hatena.ne.jp/hotentry.rss"
     case technology = "http://b.hatena.ne.jp/hotentry/it.rss"
     case study = "http://b.hatena.ne.jp/hotentry/knowledge.rss"
@@ -20,7 +28,7 @@ public enum HatenaRSSList: String {
     case game = "http://b.hatena.ne.jp/hotentry/game.rss"
     case user = "http://b.hatena.ne.jp/yuuta-iwata/bookmark.rss?of=40&14023238743"
 
-    public func getTitle() -> String {
+    public var title: String {
         switch self {
         case .home:
             return "総合"
@@ -44,4 +52,6 @@ public enum HatenaRSSList: String {
             return "ユーザー情報"
         }
     }
+
+    public var url: URL? { URL(string: self.rawValue) }
 }

@@ -6,13 +6,14 @@
 //  Copyright © 2019 田辺信之. All rights reserved.
 //
 
+import Combine
 import Foundation
+import SWXMLHash
 
 // download xml from a server,
 // parse xml to foundation objects
 // call baxhck
 public class HatenaRSSFetcher: NSObject, XMLParserDelegate {
-    //""
     private var rssItems: [RSSItem] = []
     private var currentElement = ""
     private var currentTitle: String = "" {
@@ -54,7 +55,7 @@ public class HatenaRSSFetcher: NSObject, XMLParserDelegate {
     public func parseFeed(url: HatenaRSSList, completionHandler: (([RSSItem]) -> Void)?) {
         self.parserCompletionHandler = completionHandler
 
-        let request = URLRequest(url: URL(string: url.rawValue)!)
+        let request = URLRequest(url: url.url!)
         let urlSession = URLSession.shared
         let task = urlSession.dataTask(with: request) {data, _, error in
             guard let data = data else {
@@ -70,6 +71,32 @@ public class HatenaRSSFetcher: NSObject, XMLParserDelegate {
             parser.parse()
         }
         task.resume()
+    }
+
+    public func fetchRSS(from rssinfo: RSSInfo) -> AnyPublisher<[RSSItem], RSSError> {
+        guard let url = rssinfo.url else {
+            let error = RSSError.parsing(description: "Couldn't create URL")
+            return Fail(error: error).eraseToAnyPublisher()
+        }
+        let session = URLSession.shared
+        return session.dataTaskPublisher(for: URLRequest(url: url))
+            .mapError { error in
+                .network(description: error.localizedDescription)
+            }
+        .flatMap(maxPublishers: .max(1)) { pair in
+            self.decode(pair.data)
+        }
+        .eraseToAnyPublisher()
+    }
+
+    public func decode(_ data: Data) -> AnyPublisher<[RSSItem], RSSError> {
+        let xml = SWXMLHash.parse(data)
+        return Just(xml)
+            .decode(xml: xml)
+            .mapError { error in
+                .parsing(description: error.localizedDescription)
+            }
+        .eraseToAnyPublisher()
     }
 
     public func parseFeed(urlString: String, completionHandler: (([RSSItem]) -> Void)?) {

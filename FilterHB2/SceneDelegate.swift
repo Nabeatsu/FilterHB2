@@ -8,6 +8,8 @@
 
 import SwiftUI
 import UIKit
+
+// swiftlint:disable superfluous_disable_command
 // swiftlint:disable line_length
 // swiftlint:disable explicit_acl
 // swiftlint:disable explicit_top_level_acl

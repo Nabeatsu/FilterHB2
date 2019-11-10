@@ -113,15 +113,11 @@ opt_in_rules:
 
 # Lint対象に追加するパス
 included:
-- MyLibrary
 
 # Lint対象から除外するパス
 excluded:
-- Carthage
-- Pods
-- MyLibraryDemoTests
-- FilterHB2
-
+- Carthage/
+- FilterHB2Tests/
 # 1行の文字列制限
 line_length:
 - 200   # warning

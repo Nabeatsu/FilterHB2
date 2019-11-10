@@ -10,5 +10,6 @@ import Foundation
 
 public enum RSSError: Error {
     case parsing(description: String)
+    case converting(description: String)
     case network(description: String)
 }

@@ -20,6 +20,8 @@
 		55C8750A2374638700028263 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 55C875092374638700028263 /* .swiftlint.yml */; };
 		55C8750E23746E7100028263 /* RSSItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C8750D23746E7100028263 /* RSSItem.swift */; };
 		55C8751023746EFF00028263 /* HatenaRSSList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C8750F23746EFF00028263 /* HatenaRSSList.swift */; };
+		55F92A3D237817CD0092653E /* SWXMLHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F92A3C237817CD0092653E /* SWXMLHash.framework */; };
+		55F92A3E237817CD0092653E /* SWXMLHash.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55F92A3C237817CD0092653E /* SWXMLHash.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +33,20 @@
 			remoteInfo = FilterHB2;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		55F92A3F237817CD0092653E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				55F92A3E237817CD0092653E /* SWXMLHash.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		55002D4E2374520E00DC2A45 /* FilterHB2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilterHB2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,12 +60,14 @@
 		55002D642374521000DC2A45 /* FilterHB2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilterHB2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55002D682374521000DC2A45 /* FilterHB2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHB2Tests.swift; sourceTree = "<group>"; };
 		55002D6A2374521000DC2A45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		550698CB2378122400FD327B /* SwiftyXMLParser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyXMLParser.framework; path = Carthage/Build/iOS/SwiftyXMLParser.framework; sourceTree = "<group>"; };
 		55C874FC23745CC000028263 /* HatenaRSSFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatenaRSSFetcher.swift; sourceTree = "<group>"; };
 		55C874FE23745E0300028263 /* RSSFetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFetchable.swift; sourceTree = "<group>"; };
 		55C8750123745E6F00028263 /* RSSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSError.swift; sourceTree = "<group>"; };
-		55C875092374638700028263 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = .swiftlint.yml; path = FilterHB2/.swiftlint.yml; sourceTree = "<group>"; };
+		55C875092374638700028263 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		55C8750D23746E7100028263 /* RSSItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSItem.swift; sourceTree = "<group>"; };
 		55C8750F23746EFF00028263 /* HatenaRSSList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatenaRSSList.swift; sourceTree = "<group>"; };
+		55F92A3C237817CD0092653E /* SWXMLHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SWXMLHash.framework; path = Carthage/Build/iOS/SWXMLHash.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55F92A3D237817CD0092653E /* SWXMLHash.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +96,7 @@
 				55002D502374520E00DC2A45 /* FilterHB2 */,
 				55002D672374521000DC2A45 /* FilterHB2Tests */,
 				55002D4F2374520E00DC2A45 /* Products */,
+				550698CA2378122400FD327B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +142,15 @@
 				55002D6A2374521000DC2A45 /* Info.plist */,
 			);
 			path = FilterHB2Tests;
+			sourceTree = "<group>";
+		};
+		550698CA2378122400FD327B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				55F92A3C237817CD0092653E /* SWXMLHash.framework */,
+				550698CB2378122400FD327B /* SwiftyXMLParser.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		55C874F923745BB500028263 /* Protocols */ = {
@@ -208,6 +237,8 @@
 				55002D4B2374520E00DC2A45 /* Frameworks */,
 				55002D4C2374520E00DC2A45 /* Resources */,
 				55C8750B2374639A00028263 /* ShellScript */,
+				550698CF2378123800FD327B /* ShellScript */,
+				55F92A3F237817CD0092653E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -296,6 +327,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		550698CF2378123800FD327B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SWXMLHash.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
 		55C8750B2374639A00028263 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -483,6 +532,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"FilterHB2/Preview Content\"";
 				DEVELOPMENT_TEAM = 77M5H986MA;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FilterHB2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -503,6 +556,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"FilterHB2/Preview Content\"";
 				DEVELOPMENT_TEAM = 77M5H986MA;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FilterHB2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

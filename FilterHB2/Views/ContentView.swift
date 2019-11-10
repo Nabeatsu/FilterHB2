@@ -7,10 +7,25 @@
 //
 
 import SwiftUI
+import SWXMLHash
 
 internal struct ContentView: View {
     internal var body: some View {
-        Text("Hello, World!")
+        Text("Hello, World!").onAppear(perform: logger)
+    }
+
+    private var logger = { () -> Void in
+        print("hoge")
+        //        let xml = SWXMLHash.parse(TestXML)
+        //        let text = xml["rdf:RDF"]["item"][0]["title"].element?.text
+        //        let texts = xml["rdf:RDF"]["item"].all.map { elem in
+        //            elem["title"].element?.text.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        //        }
+        //        print(texts)
+
+        //        let parser = HatenaRSSFetcher()
+        //        parser.parseFeed(url: .home, completionHandler: { _ in
+        //        })
     }
 }
 
