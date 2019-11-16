@@ -22,6 +22,12 @@
 		55C8751023746EFF00028263 /* HatenaRSSList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C8750F23746EFF00028263 /* HatenaRSSList.swift */; };
 		55F92A3D237817CD0092653E /* SWXMLHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F92A3C237817CD0092653E /* SWXMLHash.framework */; };
 		55F92A3E237817CD0092653E /* SWXMLHash.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55F92A3C237817CD0092653E /* SWXMLHash.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B551A62223804A660011DF1A /* StubKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B551A62123804A660011DF1A /* StubKit.framework */; };
+		B551A62323804A660011DF1A /* StubKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B551A62123804A660011DF1A /* StubKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B551A62423804BAB0011DF1A /* StubKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B551A62123804A660011DF1A /* StubKit.framework */; };
+		B551A62523804BAB0011DF1A /* SWXMLHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F92A3C237817CD0092653E /* SWXMLHash.framework */; };
+		B551A62723804D910011DF1A /* RSSItemsPublsher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B551A62623804D910011DF1A /* RSSItemsPublsher.swift */; };
+		B551A62923804DE90011DF1A /* RSSInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B551A62823804DE90011DF1A /* RSSInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +48,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				55F92A3E237817CD0092653E /* SWXMLHash.framework in Embed Frameworks */,
+				B551A62323804A660011DF1A /* StubKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,6 +75,9 @@
 		55C8750D23746E7100028263 /* RSSItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSItem.swift; sourceTree = "<group>"; };
 		55C8750F23746EFF00028263 /* HatenaRSSList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatenaRSSList.swift; sourceTree = "<group>"; };
 		55F92A3C237817CD0092653E /* SWXMLHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SWXMLHash.framework; path = Carthage/Build/iOS/SWXMLHash.framework; sourceTree = "<group>"; };
+		B551A62123804A660011DF1A /* StubKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StubKit.framework; path = Carthage/Build/iOS/StubKit.framework; sourceTree = "<group>"; };
+		B551A62623804D910011DF1A /* RSSItemsPublsher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSItemsPublsher.swift; sourceTree = "<group>"; };
+		B551A62823804DE90011DF1A /* RSSInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +86,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55F92A3D237817CD0092653E /* SWXMLHash.framework in Frameworks */,
+				B551A62223804A660011DF1A /* StubKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +94,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B551A62423804BAB0011DF1A /* StubKit.framework in Frameworks */,
+				B551A62523804BAB0011DF1A /* SWXMLHash.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +160,7 @@
 		550698CA2378122400FD327B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B551A62123804A660011DF1A /* StubKit.framework */,
 				55F92A3C237817CD0092653E /* SWXMLHash.framework */,
 				550698CB2378122400FD327B /* SwiftyXMLParser.framework */,
 			);
@@ -157,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				55C874FE23745E0300028263 /* RSSFetchable.swift */,
+				B551A62823804DE90011DF1A /* RSSInfo.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -174,6 +189,7 @@
 			children = (
 				55C874FC23745CC000028263 /* HatenaRSSFetcher.swift */,
 				55C8750F23746EFF00028263 /* HatenaRSSList.swift */,
+				B551A62623804D910011DF1A /* RSSItemsPublsher.swift */,
 			);
 			path = RSS;
 			sourceTree = "<group>";
@@ -336,6 +352,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/SWXMLHash.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/StubKit.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -369,6 +386,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B551A62923804DE90011DF1A /* RSSInfo.swift in Sources */,
 				55C874FF23745E0300028263 /* RSSFetchable.swift in Sources */,
 				55C8750223745E6F00028263 /* RSSError.swift in Sources */,
 				55C8750E23746E7100028263 /* RSSItem.swift in Sources */,
@@ -376,6 +394,7 @@
 				55C874FD23745CC000028263 /* HatenaRSSFetcher.swift in Sources */,
 				55002D522374520E00DC2A45 /* AppDelegate.swift in Sources */,
 				55002D542374520E00DC2A45 /* SceneDelegate.swift in Sources */,
+				B551A62723804D910011DF1A /* RSSItemsPublsher.swift in Sources */,
 				55002D562374520E00DC2A45 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -579,6 +598,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77M5H986MA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FilterHB2Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -601,6 +624,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77M5H986MA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FilterHB2Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
