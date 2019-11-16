@@ -1,2 +1,3 @@
 github "drmohundro/SWXMLHash" ~> 5.0
+github "kateinoigakukun/StubKit"
 
