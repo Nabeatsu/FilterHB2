@@ -14,8 +14,8 @@ import SWXMLHash
 /// parse xml to foundation objects
 /// call baxhck
 public struct HatenaRSSFetcher: RSSFetchable {
-    public func fetchRSS(from rssinfo: RSSInfo) -> AnyPublisher<[RSSItem], RSSError> {
-        guard let url = rssinfo.url else {
+    public func fetchRSS(from url: URL?) -> AnyPublisher<[RSSItem], RSSError> {
+        guard let url = url else {
             let error = RSSError.parsing(description: "Couldn't create URL")
             return Fail(error: error).eraseToAnyPublisher()
         }

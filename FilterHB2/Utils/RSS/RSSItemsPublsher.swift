@@ -14,7 +14,7 @@ public struct RSSItemsPublsher: Publisher {
     public let elem: XMLIndexer
 
     public func receive<S>(subscriber: S) where S: Subscriber, RSSItemsPublsher.Failure == S.Failure, RSSItemsPublsher.Output == S.Input {
-        let results = elem.all.map { RSSItem.make(from: $0) }
+        let results = elem["rdf:RDF"]["item"].all.map { RSSItem.make(from: $0) }
         var items = [RSSItem]()
         var error: RSSError?
         _ = results.map { result in

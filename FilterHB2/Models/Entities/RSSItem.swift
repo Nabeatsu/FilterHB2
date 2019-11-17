@@ -42,8 +42,9 @@ public struct RSSItem: Decodable {
             return .failure(.converting(description: "XML Element Error: Incorrect key [\"hatena:bookmarkcount\"]"))
         }
 
-        guard let currentImageUrl = xml["hatena:imageurl"].element?.text else {
-            return .failure(.converting(description: "XML Element Error: Incorrect key [\"hatena:imageurl\"]"))
+        var imageUrl = ""
+        if let currentImageUrl = xml["hatena:imageurl"].element?.text {
+            imageUrl = currentImageUrl
         }
 
         return .success(RSSItem(
@@ -52,7 +53,7 @@ public struct RSSItem: Decodable {
             pubDate: pubDate,
             url: currentUrl,
             bookmarkCount: currentbookmarkCount,
-            imageUrl: currentImageUrl
+            imageUrl: imageUrl
         ))
     }
 }

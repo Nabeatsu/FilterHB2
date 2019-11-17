@@ -13,5 +13,5 @@ import Foundation
 public protocol RSSFetchable {
     /// 引数に渡された情報を元にRSSからXMLを取得してパースし、RSSItemの配列にして返す関数
     /// - Parameter rssinfo: 取得するRSSに関する情報を保持したRSSInfo protocolに準拠する値
-    func fetchRSS(from rssinfo: RSSInfo) -> AnyPublisher<[RSSItem], RSSError>
+    func fetchRSS(from url: URL?) -> AnyPublisher<[RSSItem], RSSError>
 }

@@ -9,11 +9,10 @@
 /* Begin PBXBuildFile section */
 		55002D522374520E00DC2A45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55002D512374520E00DC2A45 /* AppDelegate.swift */; };
 		55002D542374520E00DC2A45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55002D532374520E00DC2A45 /* SceneDelegate.swift */; };
-		55002D562374520E00DC2A45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55002D552374520E00DC2A45 /* ContentView.swift */; };
+		55002D562374520E00DC2A45 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55002D552374520E00DC2A45 /* TimelineView.swift */; };
 		55002D582374521000DC2A45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55002D572374521000DC2A45 /* Assets.xcassets */; };
 		55002D5B2374521000DC2A45 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55002D5A2374521000DC2A45 /* Preview Assets.xcassets */; };
 		55002D5E2374521000DC2A45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55002D5C2374521000DC2A45 /* LaunchScreen.storyboard */; };
-		55002D692374521000DC2A45 /* FilterHB2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55002D682374521000DC2A45 /* FilterHB2Tests.swift */; };
 		55C874FD23745CC000028263 /* HatenaRSSFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C874FC23745CC000028263 /* HatenaRSSFetcher.swift */; };
 		55C874FF23745E0300028263 /* RSSFetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C874FE23745E0300028263 /* RSSFetchable.swift */; };
 		55C8750223745E6F00028263 /* RSSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C8750123745E6F00028263 /* RSSError.swift */; };
@@ -28,6 +27,9 @@
 		B551A62523804BAB0011DF1A /* SWXMLHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F92A3C237817CD0092653E /* SWXMLHash.framework */; };
 		B551A62723804D910011DF1A /* RSSItemsPublsher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B551A62623804D910011DF1A /* RSSItemsPublsher.swift */; };
 		B551A62923804DE90011DF1A /* RSSInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B551A62823804DE90011DF1A /* RSSInfo.swift */; };
+		B551A62D23805A730011DF1A /* TImelineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B551A62C23805A730011DF1A /* TImelineViewModel.swift */; };
+		B551A62F23805BEC0011DF1A /* TimelineRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B551A62E23805BEC0011DF1A /* TimelineRowViewModel.swift */; };
+		B5CA185C2381A9EB00FF2915 /* TImelineRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CA185B2381A9EB00FF2915 /* TImelineRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,13 +61,12 @@
 		55002D4E2374520E00DC2A45 /* FilterHB2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilterHB2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55002D512374520E00DC2A45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55002D532374520E00DC2A45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		55002D552374520E00DC2A45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		55002D552374520E00DC2A45 /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
 		55002D572374521000DC2A45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55002D5A2374521000DC2A45 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		55002D5D2374521000DC2A45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55002D5F2374521000DC2A45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55002D642374521000DC2A45 /* FilterHB2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilterHB2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		55002D682374521000DC2A45 /* FilterHB2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHB2Tests.swift; sourceTree = "<group>"; };
 		55002D6A2374521000DC2A45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		550698CB2378122400FD327B /* SwiftyXMLParser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyXMLParser.framework; path = Carthage/Build/iOS/SwiftyXMLParser.framework; sourceTree = "<group>"; };
 		55C874FC23745CC000028263 /* HatenaRSSFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatenaRSSFetcher.swift; sourceTree = "<group>"; };
@@ -78,6 +79,9 @@
 		B551A62123804A660011DF1A /* StubKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StubKit.framework; path = Carthage/Build/iOS/StubKit.framework; sourceTree = "<group>"; };
 		B551A62623804D910011DF1A /* RSSItemsPublsher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSItemsPublsher.swift; sourceTree = "<group>"; };
 		B551A62823804DE90011DF1A /* RSSInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSInfo.swift; sourceTree = "<group>"; };
+		B551A62C23805A730011DF1A /* TImelineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TImelineViewModel.swift; path = FilterHB2Tests/TImelineViewModel.swift; sourceTree = SOURCE_ROOT; };
+		B551A62E23805BEC0011DF1A /* TimelineRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TimelineRowViewModel.swift; path = FilterHB2Tests/TimelineRowViewModel.swift; sourceTree = SOURCE_ROOT; };
+		B5CA185B2381A9EB00FF2915 /* TImelineRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TImelineRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +155,6 @@
 		55002D672374521000DC2A45 /* FilterHB2Tests */ = {
 			isa = PBXGroup;
 			children = (
-				55002D682374521000DC2A45 /* FilterHB2Tests.swift */,
 				55002D6A2374521000DC2A45 /* Info.plist */,
 			);
 			path = FilterHB2Tests;
@@ -214,6 +217,8 @@
 		55C8750423745E8600028263 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				B551A62C23805A730011DF1A /* TImelineViewModel.swift */,
+				B551A62E23805BEC0011DF1A /* TimelineRowViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -221,7 +226,8 @@
 		55C8750523745E8C00028263 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				55002D552374520E00DC2A45 /* ContentView.swift */,
+				55002D552374520E00DC2A45 /* TimelineView.swift */,
+				B5CA185B2381A9EB00FF2915 /* TImelineRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -390,12 +396,15 @@
 				55C874FF23745E0300028263 /* RSSFetchable.swift in Sources */,
 				55C8750223745E6F00028263 /* RSSError.swift in Sources */,
 				55C8750E23746E7100028263 /* RSSItem.swift in Sources */,
+				B551A62F23805BEC0011DF1A /* TimelineRowViewModel.swift in Sources */,
 				55C8751023746EFF00028263 /* HatenaRSSList.swift in Sources */,
+				B5CA185C2381A9EB00FF2915 /* TImelineRow.swift in Sources */,
 				55C874FD23745CC000028263 /* HatenaRSSFetcher.swift in Sources */,
 				55002D522374520E00DC2A45 /* AppDelegate.swift in Sources */,
 				55002D542374520E00DC2A45 /* SceneDelegate.swift in Sources */,
 				B551A62723804D910011DF1A /* RSSItemsPublsher.swift in Sources */,
-				55002D562374520E00DC2A45 /* ContentView.swift in Sources */,
+				B551A62D23805A730011DF1A /* TImelineViewModel.swift in Sources */,
+				55002D562374520E00DC2A45 /* TimelineView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,7 +412,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55002D692374521000DC2A45 /* FilterHB2Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
