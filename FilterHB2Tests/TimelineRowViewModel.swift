@@ -16,7 +16,7 @@ struct TimelineRowViewModel: Identifiable {
     internal var pubDate: String
     internal var url: URL
     internal var bookmarkCount: Int
-    internal var imageUrl: String
+    internal var image: UIImage
     
     init(item: RSSItem) {
         self.id = item.url
@@ -25,6 +25,23 @@ struct TimelineRowViewModel: Identifiable {
         self.pubDate = item.pubDate
         self.url = URL(string: item.url)!
         self.bookmarkCount = Int(item.bookmarkCount) ?? 0
-        self.imageUrl = item.imageUrl
+        guard let imageUrl = URL(string: item.imageUrl) else {
+            self.image = UIImage(named: "hatena_logo.png")!
+            return
+        }
+        self.image = UIImage(url: imageUrl) ?? UIImage(named: "hatena_logo.png")!
+    }
+}
+
+extension UIImage {
+    public convenience init?(url: URL) {
+        do {
+            let data = try Data(contentsOf: url)
+            self.init(data: data)
+            return
+        } catch let err {
+            print("Error : \(err.localizedDescription)")
+        }
+        self.init()
     }
 }

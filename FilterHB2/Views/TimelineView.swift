@@ -12,7 +12,7 @@ import SWXMLHash
 internal struct TimelineView: View {
     @ObservedObject internal var viewModel: TimelineViewModel
 
-    init(viewModel: TimelineViewModel) {
+    internal init(viewModel: TimelineViewModel) {
         viewModel.url = HatenaRSSList.home.url
         self.viewModel = viewModel
     }

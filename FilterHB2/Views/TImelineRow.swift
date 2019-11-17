@@ -12,14 +12,22 @@ import SwiftUI
 internal struct TimelineRow: View {
     internal let viewModel: TimelineRowViewModel
 
-    init(viewModel: TimelineRowViewModel) {
+    internal init(viewModel: TimelineRowViewModel) {
         self.viewModel = viewModel
     }
 
     internal var body: some View {
-        VStack(alignment: .leading) {
-            Text("\(viewModel.title)")
-            Text("\(viewModel.url)")
+        HStack {
+            Image(uiImage: viewModel.image)
+                .resizable()
+                .frame(width: 40, height: 40)
+            VStack(alignment: .leading) {
+                Text("\(viewModel.title)")
+                Text("\(viewModel.description)")
+                    .font(.caption)
+                    .foregroundColor(.gray)
+                    .lineLimit(nil)
+            }
         }
     }
 }
@@ -34,7 +42,7 @@ internal struct TimelineRow_Previews: PreviewProvider {
                     pubDate: "12/21",
                     url: "https://google.co.jp",
                     bookmarkCount: "lksdfjlksdfjlksdjf",
-                    imageUrl: "https://google.co.jp"
+                    imageUrl: ""
                 )
             )
         )
